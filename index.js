@@ -18,16 +18,21 @@ client.on('ready', () => {
 })
 client.on('message', message => {
     if (message.author.bot) return;
-        for(var i = 0; i < 200; i++){
-            for(var j = 0; j < 200; j++){
-                if (message.content.toLowerCase() === i +" + " +j || message.content.toLowerCase() ===i+"+"+j){
-                    var res = message.content.split(" ");
-                    console.log(res, i, j);
-                    message.channel.send(i+j);
+    if (message.content.toLowerCase() === "hi"){  
+        message.channel.send("george is small");
+    
+    } 
+    if (message.content.toLowerCase() === "bye"){  
+        message.channel.send("george is still small");
+    
+    } 
+    for(var i = 0; i < 1000; i++){
+        for(var j = 0; j < 1000; j++){
+            if(message.content.toLowerCase()=== i+" + "+j || message.content.toLowerCase()=== i+"+"+j ){
+                message.channel.send(i+j);
             }
         }
     }
-
 });
 
 
