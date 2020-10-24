@@ -20,12 +20,24 @@ client.on('message', message => {
     if (message.author.bot) return;
     if (message.content.toLowerCase() === "hi"){  
         message.channel.send("george is small");
-    
     } 
     if (message.content.toLowerCase() === "bye"){  
         message.channel.send("george is still small");
-    
+    }
+    var msg = message.content.split(" ");
+    var user = msg[1]; 
+    if (msg[0] === "spam"){ 
+        for(var i = 0; i < 100; i++){
+            setTimeout(function(){
+                if (message.content.toLowerCase() === "stop") return;
+                message.channel.send("later goon " + user + " " + user+ " "+ user+ user + " " + user+ " "+ user+ user + " " + user+ " "+ user+ user + " " + user+ " "+ user
+                + user + " " + user+ " "+ user+ user + " " + user+ " "+ user+ user + " " + user+ " "+ user+ user + " " + user+ " "+ user+ user + " " + user+ " "+ user
+                + user + " " + user+ " "+ user+ user + " " + user+ " "+ user+ user + " " + user+ " "+ user+ user + " " + user+ " "+ user+ user + " " + user+ " "+ user
+                + user + " " + user+ " "+ user+ user + " " + user+ " "+ user+ user + " " + user+ " "+ user+ user + " " + user+ " "+ user+ user + " " + user+ " "+ user);
+            }, 2000);
+        }
     } 
+    
     for(var i = 0; i < 1000; i++){
         for(var j = 0; j < 1000; j++){
             if(message.content.toLowerCase()=== i+" + "+j || message.content.toLowerCase()=== i+"+"+j ){
