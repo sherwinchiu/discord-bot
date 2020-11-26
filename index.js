@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
 
-client.login("NzY5MjE4NDQ2NTM2OTk4OTIy.X5L0gQ.VY2CeHbYeWy3GL7V0H7myMzK4x0");
+client.login("NzY5MjE4NDQ2NTM2OTk4OTIy.X5L0gQ.PjoZswE7u6V9t0QXy9ZV0OIEweY");
 client.on('ready', () => {
     console.log("Connected as " + client.user.tag);
      // List servers the bot is connected to
@@ -26,6 +26,25 @@ client.on('message', message => {
     }
     var msg = message.content.split(" ");
     var user = msg[1]; 
+    if (msg[0] === "delete"){
+        if (user === "all"){
+            async function clear() {
+                message.delete();
+                const fetched = await message.channel.fetchMessages({limit: 99});
+                message.channel.bulkDelete(fetched);
+            }
+            clear();
+        }
+        else{
+            async function clear() {
+                message.delete();
+                const fetched = await message.channel.fetchMessages({limit: user});
+                message.channel.bulkDelete(fetched);
+            }
+            clear();
+        }
+        
+    }
     if (msg[0] === "spam"){ 
         for(var i = 0; i < 100; i++){
             setTimeout(function(){
